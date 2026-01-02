@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div class="flex justify-evenly px-4 py-2 bg-red-200 p-5">
+        <label for="name" >Name</label>
+        <input id="name" class="border rounded"/>
+        <label for="surname" >Surname</label>
+        <input id="surname" class="border rounded"/>
+        <button id="btn" onclick="handleClick()" class="border rounded">submit</button>
+    </div>
+    <div class="p-4 m-4">
+        <table id='table' class='mx-auto'>
+            <tr class="bg-red-200">
+                <th class="border p-3 m-4">Name</th>
+                <th class="border p-3 m-4">Surname</th>
+            </tr>
+            
+        </table>
+    </div>
+    <script>
+        let data=[];
+        function handleClick(){
+            let obj={
+                name:document.getElementById('name').value,
+                surname:document.getElementById('surname').value
+            }
+            data.push(obj);
+            console.log(obj)
+            console.log(data);
+            show();
+        }
+            function show(){
+                let newData=data.map((i)=>{
+                return    `<tr class="bg-red-200">
+                        <th class="border p-3 m-4">${i.name}</th>
+                        <th class="border p-3 m-4">${i.surname}</th>
+                    </tr>`
+
+                })
+                document.getElementById('table').innerHTML+=newData
+
+            }
+        
+        // console.log(data);
+        
+        // document.getElementById('btn').addEventListener('click',()=>{
+        // let name= document.getElementById('name').value;
+        // console.log(name)
+        // data.push(name);
+        // })
+        // console.log(data);
+    </script>
+</body>
+</html>

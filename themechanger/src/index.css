@@ -1,0 +1,17 @@
+.light-theme {
+  background-color: white;
+  color: black;
+  height: 100vh;
+}
+
+.dark-theme {
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
+button {
+  padding: 8px 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
